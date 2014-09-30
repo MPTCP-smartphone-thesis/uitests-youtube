@@ -35,15 +35,14 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		sleep(1000);
 
 		// Click on Most Popular Right Now
-		UiObject most_popular = new UiObject(new UiSelector().className("android.widget.FrameLayout")
-.instance(0));
+		UiObject most_popular = Utils.getObjectWithClassName(
+				"android.widget.FrameLayout", 0);
 		assertTrue("Button most popular right now is not here",
 				Utils.click(most_popular));
 
 		sleep(1000);
 
-		UiScrollable list = new UiScrollable(
-				new UiSelector().resourceId(ID_YOUT_LIST));
+		UiScrollable list = Utils.getScrollableWithId(ID_YOUT_LIST);
 		
 		// Goes on until no more video
 		while (Utils.scrollForward(list)) {
@@ -63,8 +62,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				sleep(60000);
 				getUiDevice().pressBack();
 			}
-			UiObject player = new UiObject(
-					new UiSelector().resourceId(ID_YOUT_PLAYER));
+			UiObject player = Utils.getObjectWithId(ID_YOUT_PLAYER);
 			assertTrue("Failed to swipe the video player fragment",
 					Utils.swipeLeft(player, 100));
 		}
