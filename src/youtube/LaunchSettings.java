@@ -45,7 +45,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		UiScrollable list = Utils.getScrollableWithId(ID_YOUT_LIST);
 		
 		// Goes on until no more video
-		while (Utils.scrollForward(list)) {
+		for (int k = 0; k < 3 && Utils.scrollForward(list); k++) {
 			// Take the list to count the number of items in it
 			int nb_childs = Utils.getChildCount(list);
 
@@ -73,7 +73,9 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		assertTrue("OOOOOpps",
 				Utils.openApp(this, "YouTube", "com.google.android.youtube"));
 
+		Utils.launchTcpdump("youtube", 900);
 		seeAllPopular();
+		Utils.killTcpdump();
 	}
 
 }
