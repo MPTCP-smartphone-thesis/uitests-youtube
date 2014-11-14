@@ -23,22 +23,42 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		}
 		
 		sleep(1000);
-
-		// Click on first button (Popular on YouTube)
-		UiObject popular = new UiObject(new UiSelector().resourceId(
-				ID_YOUT_LIST).childSelector(
-				new UiSelector().className("android.widget.FrameLayout")
-						.instance(0)));
-		assertTrue("Button popular on YouTube is not here",
-				Utils.click(popular));
 		
+		Utils.click(Utils.getObjectWithDescription("What to Watch, Open guide"));
+
 		sleep(1000);
 
+		Utils.click(Utils.getObjectWithClassName(
+				"android.widget.RelativeLayout", 8));
+
+		sleep(1000);
+
+		// Click on first button (Popular on YouTube)
+		// UiObject popular = new UiObject(new UiSelector().resourceId(
+		// ID_YOUT_LIST).childSelector(
+		// new UiSelector().className("android.widget.FrameLayout")
+		// .instance(0)));
+		//
+		// UiScrollable mainList = Utils.getScrollableWithId(ID_YOUT_LIST);
+		//
+		// while (!Utils.click(popular)) {
+		// Utils.scrollForward(mainList);
+		// sleep(1000);
+		// popular = new UiObject(new UiSelector().resourceId(ID_YOUT_LIST)
+		// .childSelector(
+		// new UiSelector().className(
+		// "android.widget.FrameLayout").instance(0)));
+		// }
+		//
+		// sleep(1000);
+
 		// Click on Most Popular Right Now
-		UiObject most_popular = Utils.getObjectWithClassName(
-				"android.widget.FrameLayout", 0);
-		assertTrue("Button most popular right now is not here",
-				Utils.click(most_popular));
+		// UiObject most_popular = Utils.getObjectWithClassName(
+		// "android.widget.FrameLayout", 0);
+		// assertTrue("Button most popular right now is not here",
+		// Utils.click(most_popular));
+
+		Utils.click(Utils.getObjectWithText("Videos"));
 
 		sleep(1000);
 
@@ -72,6 +92,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	public void testDemo() throws UiObjectNotFoundException {
 		assertTrue("OOOOOpps",
 				Utils.openApp(this, "YouTube", "com.google.android.youtube"));
+		sleep(10000);
 
 		Utils.launchTcpdump("youtube", 900);
 		seeAllPopular();
