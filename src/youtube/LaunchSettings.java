@@ -67,6 +67,12 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 			// -4 to avoid the fuzzy behavior with the video player fragment
 			for (int i = 0; i < 2 * nb_childs - 4 && nVid < MAX_VIDEOS; i = i + 2) {
+				// 'Got it' button that we can have sometimes
+				if (Utils.hasObject(ID_INIT_OK)) {
+					Utils.click(ID_INIT_OK);
+					sleep(1000);
+				}
+
 				UiObject video = new UiObject(new UiSelector().resourceId(
 						ID_YOUT_LIST).childSelector(
 						new UiSelector()
@@ -76,8 +82,10 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				sleep(TIME_VIDEO);
 				nVid++;
 				// Got it button that we can have sometimes
-				if (Utils.hasObject(ID_INIT_OK))
+				if (Utils.hasObject(ID_INIT_OK)) {}
 					Utils.click(ID_INIT_OK);
+					sleep(1000);
+				}
 
 				getUiDevice().pressBack();
 			}
