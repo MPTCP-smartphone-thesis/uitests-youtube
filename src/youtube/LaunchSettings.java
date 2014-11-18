@@ -101,7 +101,7 @@ Utils.getObjectWithId(ID_YOUT_TEXT),
 								.className("android.widget.FrameLayout")
 								.instance(i)));
 				assertTrue("Reference a non-existing video", Utils.click(video));
-				sleep(3000);
+				sleep(30000);
 				getUiDevice().pressBack();
 			}
 			UiObject player = Utils.getObjectWithId(ID_YOUT_PLAYER);
