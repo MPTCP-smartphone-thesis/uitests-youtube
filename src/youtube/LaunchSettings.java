@@ -15,6 +15,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	private static String ID_YOUT_SEARCH = "com.google.android.youtube:id/menu_search";
 	private static String ID_YOUT_TEXT = "android:id/search_src_text";
 	private static String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
+	private static String ID_INIT_OK = "com.google.android.youtube:id/ok";
 
 	private void seeAllPopular() {
 		sleep(1500);
@@ -28,8 +29,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 		sleep(1000);
 		
-		Utils.setText(
-Utils.getObjectWithId(ID_YOUT_TEXT),
+		Utils.setText(Utils.getObjectWithId(ID_YOUT_TEXT),
 				"Stanford openflow channel");
 
 		sleep(1000);
@@ -102,6 +102,11 @@ Utils.getObjectWithId(ID_YOUT_TEXT),
 								.instance(i)));
 				assertTrue("Reference a non-existing video", Utils.click(video));
 				sleep(30000);
+
+				// Got it button that we can have sometimes
+				if (Utils.hasObject(ID_INIT_OK))
+					Utils.click(ID_INIT_OK);
+
 				getUiDevice().pressBack();
 			}
 			UiObject player = Utils.getObjectWithId(ID_YOUT_PLAYER);
@@ -118,6 +123,11 @@ Utils.getObjectWithId(ID_YOUT_TEXT),
 		sleep(10000);
 
 		Utils.launchTcpdump("youtube", 900);
+
+		// initial menu: just clic on OK
+		if (Utils.hasObject(ID_INIT_OK))
+			Utils.click(ID_INIT_OK);
+
 		seeAllPopular();
 		Utils.killTcpdump();
 	}
