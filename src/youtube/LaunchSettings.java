@@ -36,7 +36,6 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				"Stanford openflow channel");
 
 		sleep(1000);
-		Utils.launchTcpdump("dailymotion", 900);
 
 		getUiDevice().pressEnter();
 
@@ -82,7 +81,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				sleep(TIME_VIDEO);
 				nVid++;
 				// Got it button that we can have sometimes
-				if (Utils.hasObject(ID_INIT_OK)) {}
+				if (Utils.hasObject(ID_INIT_OK)) {
 					Utils.click(ID_INIT_OK);
 					sleep(1000);
 				}
