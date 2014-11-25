@@ -100,7 +100,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				Utils.openApp(this, "YouTube", "com.google.android.youtube"));
 		sleep(10000);
 
-		Utils.launchTcpdump("youtube", 900);
+		Utils.launchTcpdump("youtube");
 
 		// initial menu: just clic on OK
 		if (Utils.hasObject(ID_INIT_OK))
