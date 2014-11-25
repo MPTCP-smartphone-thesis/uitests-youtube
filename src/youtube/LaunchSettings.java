@@ -10,15 +10,15 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 public class LaunchSettings extends UiAutomatorTestCase {
 
-	private static String ID_YOUT_LIST = "com.google.android.youtube:id/results";
-	private static String ID_YOUT_TITLE = "android:id/action_bar_title";
-	private static String ID_YOUT_SEARCH = "com.google.android.youtube:id/menu_search";
-	private static String ID_YOUT_TEXT = "android:id/search_src_text";
-	private static String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
-	private static String ID_INIT_OK = "com.google.android.youtube:id/ok";
+	private static final String ID_YOUT_LIST = "com.google.android.youtube:id/results";
+	private static final String ID_YOUT_TITLE = "android:id/action_bar_title";
+	private static final String ID_YOUT_SEARCH = "com.google.android.youtube:id/menu_search";
+	private static final String ID_YOUT_TEXT = "android:id/search_src_text";
+	private static final String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
+	private static final String ID_INIT_OK = "com.google.android.youtube:id/ok";
 
-	private static int MAX_VIDEOS = 10;
-	private static int TIME_VIDEO = 30000;
+	private static final int MAX_VIDEOS = 2;
+	private static final int TIME_VIDEO = 30000;
 
 	private void goToTheChannel() {
 		sleep(1500);
