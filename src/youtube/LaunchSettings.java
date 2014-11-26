@@ -21,6 +21,12 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 	private void goToTheChannel() {
 		sleep(1500);
+		UiObject search = Utils.getObjectWithId(ID_YOUT_SEARCH);
+		while (!search.exists()) {
+			getUiDevice().pressBack();
+			sleep(1500);
+			search = Utils.getObjectWithId(ID_YOUT_SEARCH);
+		}
 
 		Utils.click(ID_YOUT_SEARCH);
 
