@@ -88,6 +88,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 				getUiDevice().pressBack();
 			}
+			sleep(1000);
 			UiObject player = Utils.getObjectWithId(ID_YOUT_PLAYER);
 			assertTrue("Failed to swipe the video player fragment",
 					Utils.swipeLeft(player, 100));
