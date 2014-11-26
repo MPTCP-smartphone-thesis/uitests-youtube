@@ -11,7 +11,6 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 public class LaunchSettings extends UiAutomatorTestCase {
 
 	private static final String ID_YOUT_LIST = "com.google.android.youtube:id/results";
-	private static final String ID_YOUT_TITLE = "android:id/action_bar_title";
 	private static final String ID_YOUT_SEARCH = "com.google.android.youtube:id/menu_search";
 	private static final String ID_YOUT_TEXT = "android:id/search_src_text";
 	private static final String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
@@ -22,11 +21,6 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 	private void goToTheChannel() {
 		sleep(1500);
-		// Return to main menu if needed
-		while (!Utils.hasText(ID_YOUT_TITLE, "What to Watch")) {
-			getUiDevice().pressBack();
-			sleep(1500);
-		}
 
 		Utils.click(ID_YOUT_SEARCH);
 
