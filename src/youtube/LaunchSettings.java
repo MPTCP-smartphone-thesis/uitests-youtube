@@ -99,7 +99,6 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	public void testDemo() throws UiObjectNotFoundException {
 		assertTrue("OOOOOpps",
 				Utils.openApp(this, "YouTube", "com.google.android.youtube"));
-		sleep(10000);
 
 		String iface = getParams().getString("iface");
 		if (iface != null) {
@@ -107,6 +106,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		}
 
 		// initial menu: just clic on OK
+		sleep(1000);
 		if (Utils.hasObject(ID_INIT_OK))
 			Utils.click(ID_INIT_OK);
 		goToTheChannel();
