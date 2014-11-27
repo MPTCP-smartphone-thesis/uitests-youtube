@@ -28,7 +28,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 			search = Utils.getObjectWithId(ID_YOUT_SEARCH);
 		}
 
-		Utils.click(ID_YOUT_SEARCH);
+		assertTrue("Cannot do search", Utils.click(ID_YOUT_SEARCH));
 
 		sleep(1000);
 
@@ -90,8 +90,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 			}
 			sleep(1000);
 			UiObject player = Utils.getObjectWithId(ID_YOUT_PLAYER);
-			assertTrue("Failed to swipe the video player fragment",
-					Utils.swipeLeft(player, 100));
+			Utils.swipeLeft(player, 100);
 			canScroll = Utils.scrollForward(list);
 		}
 	}
