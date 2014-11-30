@@ -16,8 +16,8 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	private static final String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
 	private static final String ID_INIT_OK = "com.google.android.youtube:id/ok";
 
-	private static final int MAX_VIDEOS = 2;
-	private static final int TIME_VIDEO = 30000;
+	private static final int MAX_VIDEOS = 3;
+	private static final int TIME_VIDEO = 25000;
 
 	private void goToTheChannel() {
 		sleep(1500);
