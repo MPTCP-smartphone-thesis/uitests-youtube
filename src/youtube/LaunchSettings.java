@@ -97,7 +97,9 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 	public void testDemo() throws UiObjectNotFoundException {
 		assertTrue("OOOOOpps",
-				Utils.openApp(this, "YouTube", "com.google.android.youtube"));
+				Utils.openApp(this, "YouTube",
+						"com.google.android.youtube",
+						"com.google.android.apps.youtube.app.WatchWhileActivity"));
 
 		// initial menu: just clic on OK
 		sleep(1000);
