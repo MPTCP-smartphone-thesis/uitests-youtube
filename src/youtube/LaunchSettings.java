@@ -16,7 +16,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	private static final String ID_YOUT_PLAYER = "com.google.android.youtube:id/player_fragment";
 	private static final String ID_INIT_OK = "com.google.android.youtube:id/ok";
 
-	private static final int MAX_VIDEOS = 3;
+	private static int MAX_VIDEOS = 3;
 	private static final int TIME_VIDEO = 25000;
 
 	private void goToTheChannel() {
@@ -100,6 +100,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				Utils.openApp(this, "YouTube",
 						"com.google.android.youtube",
 						"com.google.android.apps.youtube.app.WatchWhileActivity"));
+		MAX_VIDEOS = Math.max(1, (int) (MAX_VIDEOS * Utils.getMultTime(this)));
 
 		// initial menu: just clic on OK
 		sleep(1000);
